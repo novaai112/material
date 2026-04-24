@@ -2,8 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NoiseBackground } from "@/components/ui/noise-background";
 import { SplashCursor } from "@/components/ui/splash-cursor";
-import { Search, ChevronRight, X, Atom, Thermometer, Flame, Maximize, Activity, Shield, Info, Zap } from "lucide-react";
+import { Search, ChevronRight, X, Atom, Thermometer, Flame, Maximize, Activity, Shield, Info, Zap, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { generateAnsysXML } from "@/lib/ansysExport";
 
 export default function MaterialDashboard() {
   const [materialData, setMaterialData] = useState<any[]>([]);
@@ -65,6 +66,20 @@ export default function MaterialDashboard() {
     setSuggestions([]);
     const firstKey = Object.keys(material).find((k) => k !== "Name" && typeof material[k] === "object");
     if (firstKey) setActiveTab(firstKey);
+  };
+
+  const handleDownloadAnsys = () => {
+    if (!selectedMaterial) return;
+    const xml = generateAnsysXML(selectedMaterial);
+    const blob = new Blob([xml], { type: "application/xml" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${selectedMaterial.Name.replace(/\s+/g, '_')}_Ansys.xml`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
 
   const isTempDependentTable = (obj: any) => obj && typeof obj === "object" && obj.Temperature && obj.Temperature.Values && Array.isArray(obj.Temperature.Values);
@@ -426,6 +441,20 @@ export default function MaterialDashboard() {
                           <ChevronRight className={`w-4 h-4 transition-transform ${activeTab === key ? "text-[#00e5ff]" : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"}`} />
                         </button>
                       ))}
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-white/10">
+                    <p className="text-[0.65rem] font-bold text-[#9d00ff] tracking-widest uppercase mb-3">Export to Ansys</p>
+                    <div className="flex flex-col gap-3">
+                      <button 
+                        onClick={handleDownloadAnsys}
+                        className="w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#00e5ff]/50 text-white font-medium text-sm py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group shadow-sm hover:shadow-[0_0_20px_rgba(0,229,255,0.15)] relative overflow-hidden"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-700 ease-in-out"></div>
+                        <Download className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:text-[#00e5ff] transition-all relative z-10" />
+                        <span className="relative z-10">Add to Ansys</span>
+                      </button>
+                    </div>
                   </div>
                 </motion.div>
 
