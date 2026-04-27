@@ -444,15 +444,28 @@ export default function MaterialDashboard() {
                   </div>
 
                   <div className="mt-8 pt-6 border-t border-white/10">
-                    <p className="text-[0.65rem] font-bold text-[#9d00ff] tracking-widest uppercase mb-3">Export to Ansys</p>
                     <div className="flex flex-col gap-3">
                       <button 
                         onClick={handleDownloadAnsys}
-                        className="w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#00e5ff]/50 text-white font-medium text-sm py-3.5 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group shadow-sm hover:shadow-[0_0_20px_rgba(0,229,255,0.15)] relative overflow-hidden"
+                        className="w-full bg-[#FFB71B] hover:bg-[#ECA918] active:bg-[#D99A15] text-black font-semibold text-sm py-2.5 px-4 rounded-md border border-[#D99A15] transition-colors duration-150 flex items-center justify-center gap-2 shadow-sm"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-700 ease-in-out"></div>
-                        <Download className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:text-[#00e5ff] transition-all relative z-10" />
-                        <span className="relative z-10">Add to Ansys</span>
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          width="18" 
+                          height="18" 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          strokeWidth="2" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                          className="flex-shrink-0"
+                        >
+                          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                        <span>Export to Ansys</span>
                       </button>
                     </div>
                   </div>
