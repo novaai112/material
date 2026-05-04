@@ -321,7 +321,7 @@ export default function MaterialDashboard() {
                 transition={{ delay: 0.2, duration: 0.6 }}
                 className="pointer-events-auto flex flex-col items-center"
               >
-                <h1 className="text-5xl md:text-5xl lg:text-[6rem] font-playfair font-bold mb-12 text-[#0f172a] tracking-tight pointer-events-auto leading-[1.05] drop-shadow-sm">
+                <h1 className="text-3xl md:text-5xl lg:text-[6rem] font-playfair font-bold mb-12 text-[#0f172a] tracking-tight pointer-events-auto leading-[1.05] drop-shadow-sm">
                   Find material properties in every moment.
                 </h1>
               </motion.div>
