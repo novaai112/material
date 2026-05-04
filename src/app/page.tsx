@@ -123,7 +123,7 @@ export default function MaterialDashboard() {
       >
         <div className="flex items-center gap-3 mb-6">
           <div className="h-px bg-gradient-to-r from-slate-300/50 to-transparent flex-1 opacity-50"></div>
-          <h4 className="text-slate-800 dark:text-slate-200 uppercase tracking-widest text-[0.7rem] font-bold flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-slate-300/20">
+          <h4 className="text-slate-800 uppercase tracking-widest text-[0.7rem] font-bold flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-slate-300/20">
             <Atom className="w-3.5 h-3.5" /> {splitCamelCase(title)}
           </h4>
           <div className="h-px bg-gradient-to-l from-slate-300/50 to-transparent flex-1 opacity-50"></div>
@@ -137,7 +137,7 @@ export default function MaterialDashboard() {
                   <thead className="bg-slate-500/10 border-b border-slate-300/20">
                     <tr>
                       {baseCols.map((c) => (
-                        <th key={c} className="px-6 py-4 font-semibold tracking-wider text-[0.75rem] uppercase text-slate-600 dark:text-slate-300">
+                        <th key={c} className="px-6 py-4 font-semibold tracking-wider text-[0.75rem] uppercase text-slate-600">
                           {splitCamelCase(c)}
                           {subVal[c].Unit && <span className="text-slate-500 normal-case ml-1.5 tracking-normal">({subVal[c].Unit})</span>}
                         </th>
@@ -151,7 +151,7 @@ export default function MaterialDashboard() {
                       return (
                         <tr key={i} className="hover:bg-slate-500/5 transition-colors duration-200 group">
                           {baseCols.map((c, index) => (
-                            <td key={c} className={`px-6 py-3.5 text-slate-800 dark:text-slate-200 ${index === 0 ? 'font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors' : 'font-light font-mono text-[0.9rem]'}`}>
+                            <td key={c} className={`px-6 py-3.5 text-slate-800 ${index === 0 ? 'font-medium group-hover:text-blue-600 transition-colors' : 'font-light font-mono text-[0.9rem]'}`}>
                               {subVal[c].Values[dataIndex] ?? "-"}
                             </td>
                           ))}
@@ -192,7 +192,7 @@ export default function MaterialDashboard() {
             className="glass-panel rounded-2xl p-5 flex flex-col justify-between hover:bg-white/30 transition-all duration-300 group"
           >
             <span className="text-slate-500 text-[0.7rem] font-bold uppercase tracking-widest mb-3 group-hover:text-blue-600 transition-colors">{splitCamelCase(key)}</span>
-            <span className="text-2xl font-semibold text-slate-800 dark:text-slate-100 tracking-tight" dangerouslySetInnerHTML={{ __html: formatVal(val) }}></span>
+            <span className="text-2xl font-semibold text-slate-800 tracking-tight" dangerouslySetInnerHTML={{ __html: formatVal(val) }}></span>
           </motion.div>
         ))}
       </motion.div>
@@ -206,7 +206,7 @@ export default function MaterialDashboard() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="w-full text-slate-800 dark:text-slate-300"
+          className="w-full text-slate-800"
         >
           {renderTempTable(tabName, dataObj)}
         </motion.div>
@@ -221,7 +221,7 @@ export default function MaterialDashboard() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="w-full text-slate-800 dark:text-slate-300"
+        className="w-full text-slate-800"
       >
         {standardProps.length > 0 && renderStandardProps(standardProps)}
         {tempProps.map(([subKey, subVal]: [string, any]) => renderTempTable(subKey, subVal))}
@@ -247,7 +247,7 @@ export default function MaterialDashboard() {
         .glass-panel {
           background: rgba(255, 255, 255, 0.4);
           backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(17px);
           border: 1px solid rgba(255, 255, 255, 0.5);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
         }
@@ -321,8 +321,8 @@ export default function MaterialDashboard() {
                 transition={{ delay: 0.2, duration: 0.6 }}
                 className="pointer-events-auto flex flex-col items-center"
               >
-                <h1 className="text-3xl md:text-5xl lg:text-[6rem] font-playfair font-bold mb-12 text-[#0f172a] tracking-tight pointer-events-auto leading-[1.05] drop-shadow-sm">
-                  Find material properties in every moment.
+                <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-playfair font-bold mb-12 text-[#0f172a] tracking-tight pointer-events-auto leading-[1.05] drop-shadow-sm">
+                  Find exact material properties in every moment.
                 </h1>
               </motion.div>
 
@@ -482,8 +482,8 @@ export default function MaterialDashboard() {
                           key={key}
                           onClick={() => setActiveTab(key)}
                           className={`text-left px-4 py-3.5 rounded-2xl text-sm font-medium transition-all relative group flex items-center justify-between overflow-hidden ${activeTab === key
-                              ? "bg-white/60 text-blue-700 shadow-sm border border-white"
-                              : "text-slate-600 hover:bg-white/40 hover:text-slate-900 border border-transparent"
+                            ? "bg-white/60 text-blue-700 shadow-sm border border-white"
+                            : "text-slate-600 hover:bg-white/40 hover:text-slate-900 border border-transparent"
                             }`}
                         >
                           <div className="flex items-center gap-3 relative z-10">
