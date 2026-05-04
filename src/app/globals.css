@@ -7,7 +7,7 @@
 
 body {
   background-color: #1a41df;
-  color: #f8fafc;
+  color: #0f172a; /* Changed from white to dark black/slate */
   min-height: 100vh;
   margin: 0;
   padding: 0;
