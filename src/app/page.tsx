@@ -273,26 +273,26 @@ export default function MaterialDashboard() {
       `}} />
 
       
-      {/* Top Navbar */}
+      {/* Centered Floating Navbar */}
       {!selectedMaterial && (
-        <nav className="fixed top-0 inset-x-0 z-50 bg-white/70 backdrop-blur-lg border-b border-slate-200/50 shadow-sm px-6 py-4 md:px-12 transition-all duration-300 pointer-events-auto">
-          <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
+        <div className="fixed top-6 inset-x-0 z-50 flex justify-center pointer-events-none px-4">
+          <nav className="pointer-events-auto bg-white/70 backdrop-blur-lg border border-slate-200/50 shadow-lg shadow-slate-200/20 rounded-full px-4 py-2.5 md:px-6 md:py-3 flex items-center justify-between gap-12 md:gap-32 transition-all duration-300">
             
             {/* Brand / Logo */}
             <a
               href="https://asme-material.vercel.app/"
-              className="group flex items-center gap-2 transition-transform duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
+              className="group flex items-center gap-2 transition-transform duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-full pl-2"
             >
-              <span className="text-2xl md:text-3xl font-playfair font-bold text-slate-900 tracking-tight transition-colors">
+              <span className="text-xl md:text-2xl font-playfair font-bold text-slate-900 tracking-tight transition-colors">
                 Material<span className="font-light italic text-slate-500 group-hover:text-blue-600 transition-colors">DB</span>
               </span>
             </a>
       
             {/* Navigation / Actions */}
-            <div className="flex items-center gap-5 text-sm font-medium">
+            <div className="flex items-center text-sm font-medium">
               <a
                 href="https://nova-analysis.vercel.app/"
-                className="group flex items-center justify-center gap-2 px-6 py-2.5 bg-slate-900 text-white rounded-full hover:bg-blue-600 shadow-md hover:shadow-lg hover:shadow-blue-500/30 active:scale-95 transition-all duration-300 tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900"
+                className="group flex items-center justify-center gap-2 px-5 py-2 md:px-6 md:py-2.5 bg-slate-900 text-white rounded-full hover:bg-blue-600 shadow-md hover:shadow-lg hover:shadow-blue-500/30 active:scale-95 transition-all duration-300 tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900"
               >
                 <span>Dashboard</span>
                 <svg 
@@ -307,8 +307,8 @@ export default function MaterialDashboard() {
               </a>
             </div>
             
-          </div>
-        </nav>
+          </nav>
+        </div>
       )}
 
       <AnimatePresence mode="wait">
