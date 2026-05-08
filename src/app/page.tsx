@@ -273,43 +273,43 @@ export default function MaterialDashboard() {
       `}} />
 
       
-      {/* Centered Floating Navbar */}
-      {!selectedMaterial && (
-        <div className="fixed top-6 inset-x-0 z-50 flex justify-center pointer-events-none px-4">
-          <nav className="pointer-events-auto bg-white/70 backdrop-blur-lg border border-slate-200/50 shadow-lg shadow-slate-200/20 rounded-full px-4 py-2.5 md:px-6 md:py-3 flex items-center justify-between gap-12 md:gap-32 transition-all duration-300">
-            
-            {/* Brand / Logo */}
+     {/* Centered Ultra-Glass Navbar */}
+    {!selectedMaterial && (
+      <div className="fixed top-6 inset-x-0 z-50 flex justify-center pointer-events-none px-4">
+        <nav className="pointer-events-auto bg-white/30 backdrop-blur-xl backdrop-saturate-150 border border-white/50 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] rounded-full px-4 py-2.5 md:px-6 md:py-3 flex items-center justify-between gap-12 md:gap-32 transition-all duration-300">
+          
+          {/* Brand / Logo */}
+          <a
+            href="https://asme-material.vercel.app/"
+            className="group flex items-center gap-2 transition-transform duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-full pl-2"
+          >
+            <span className="text-xl md:text-2xl font-playfair font-bold text-slate-900 tracking-tight transition-colors">
+              Material<span className="font-light italic text-slate-600 group-hover:text-blue-600 transition-colors">DB</span>
+            </span>
+          </a>
+    
+          {/* Navigation / Actions */}
+          <div className="flex items-center text-sm font-medium">
             <a
-              href="https://asme-material.vercel.app/"
-              className="group flex items-center gap-2 transition-transform duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-full pl-2"
+              href="https://nova-analysis.vercel.app/"
+              className="group flex items-center justify-center gap-2 px-5 py-2 md:px-6 md:py-2.5 bg-slate-900/90 backdrop-blur-md text-white rounded-full hover:bg-blue-600 shadow-md hover:shadow-lg hover:shadow-blue-500/30 active:scale-95 transition-all duration-300 tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900"
             >
-              <span className="text-xl md:text-2xl font-playfair font-bold text-slate-900 tracking-tight transition-colors">
-                Material<span className="font-light italic text-slate-500 group-hover:text-blue-600 transition-colors">DB</span>
-              </span>
-            </a>
-      
-            {/* Navigation / Actions */}
-            <div className="flex items-center text-sm font-medium">
-              <a
-                href="https://nova-analysis.vercel.app/"
-                className="group flex items-center justify-center gap-2 px-5 py-2 md:px-6 md:py-2.5 bg-slate-900 text-white rounded-full hover:bg-blue-600 shadow-md hover:shadow-lg hover:shadow-blue-500/30 active:scale-95 transition-all duration-300 tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900"
+              <span>Dashboard</span>
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
               >
-                <span>Dashboard</span>
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
-            </div>
-            
-          </nav>
-        </div>
-      )}
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+          
+        </nav>
+      </div>
+    )}
 
       <AnimatePresence mode="wait">
         {!selectedMaterial ? (
