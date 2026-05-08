@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { SplashCursor } from "@/components/ui/splash-cursor";
 import { Search, ChevronRight, X, Atom, Thermometer, Flame, Maximize, Activity, Shield, Info, Zap, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { generateAnsysXML } from "@/lib/ansysExport";
@@ -273,18 +272,7 @@ export default function MaterialDashboard() {
         }
       `}} />
 
-      <SplashCursor
-        SIM_RESOLUTION={128}
-        DYE_RESOLUTION={1440}
-        DENSITY_DISSIPATION={3.5}
-        VELOCITY_DISSIPATION={2.0}
-        PRESSURE={0.1}
-        CURL={3}
-        SPLAT_RADIUS={0.2}
-        SPLAT_FORCE={6000}
-        COLOR_UPDATE_SPEED={10}
-      />
-
+      
       {/* Top Navbar */}
       {!selectedMaterial && (
         <nav className="fixed top-0 left-0 right-0 z-50 glass-nav px-6 md:px-12 py-4 flex items-center justify-between pointer-events-auto transition-all">
