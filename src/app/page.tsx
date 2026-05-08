@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { SplashCursor } from "@/components/ui/splash-cursor";
 import { Search, ChevronRight, X, Atom, Thermometer, Flame, Maximize, Activity, Shield, Info, Zap, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { generateAnsysXML } from "@/lib/ansysExport";
