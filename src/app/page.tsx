@@ -277,7 +277,9 @@ export default function MaterialDashboard() {
       {!selectedMaterial && (
         <nav className="fixed top-0 left-0 right-0 z-50 glass-nav px-6 md:px-12 py-4 flex items-center justify-between pointer-events-auto transition-all">
           <div className="flex items-center gap-2">
-            <span className="text-3xl font-playfair font-bold text-[#0f172a] tracking-tight">Material<span className="font-light italic text-[#334155]">DB</span></span>
+             <a
+              href="https://asme-material.vercel.app/"
+            <span className="text-3xl font-playfair font-bold text-[#0f172a] tracking-tight">Material<span className="font-light italic text-[#334155]">DB</span></span></a>
           </div>
 
           <div className="flex items-center gap-5 text-sm font-semibold">
