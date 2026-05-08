@@ -275,20 +275,38 @@ export default function MaterialDashboard() {
       
       {/* Top Navbar */}
       {!selectedMaterial && (
-        <nav className="fixed top-0 left-0 right-0 z-50 glass-nav px-6 md:px-12 py-4 flex items-center justify-between pointer-events-auto transition-all">
-          <div className="flex items-center gap-2">
-             <a
-              href="https://asme-material.vercel.app/"
-            <span className="text-3xl font-playfair font-bold text-[#0f172a] tracking-tight">Material<span className="font-light italic text-[#334155]">DB</span></span></a>
-          </div>
-
-          <div className="flex items-center gap-5 text-sm font-semibold">
+        <nav className="fixed top-0 inset-x-0 z-50 bg-white/70 backdrop-blur-lg border-b border-slate-200/50 shadow-sm px-6 py-4 md:px-12 transition-all duration-300 pointer-events-auto">
+          <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
+            
+            {/* Brand / Logo */}
             <a
-              href="https://nova-analysis.vercel.app/"
-              className="px-6 py-2.5 bg-[#0f172a] text-white rounded-full hover:bg-blue-600 shadow-lg hover:shadow-blue-500/30 transition-all duration-300 tracking-wide"
+              href="https://asme-material.vercel.app/"
+              className="group flex items-center gap-2 transition-transform duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
             >
-              Dashboard
+              <span className="text-2xl md:text-3xl font-playfair font-bold text-slate-900 tracking-tight transition-colors">
+                Material<span className="font-light italic text-slate-500 group-hover:text-blue-600 transition-colors">DB</span>
+              </span>
             </a>
+      
+            {/* Navigation / Actions */}
+            <div className="flex items-center gap-5 text-sm font-medium">
+              <a
+                href="https://nova-analysis.vercel.app/"
+                className="group flex items-center justify-center gap-2 px-6 py-2.5 bg-slate-900 text-white rounded-full hover:bg-blue-600 shadow-md hover:shadow-lg hover:shadow-blue-500/30 active:scale-95 transition-all duration-300 tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900"
+              >
+                <span>Dashboard</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+            
           </div>
         </nav>
       )}
